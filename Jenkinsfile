@@ -44,7 +44,6 @@ pipeline{
          //START TOMCAT
          sh "ssh ec2-user@172.31.47.100 /opt/tomcat9/bin/startup.sh"
                     echo "deploy to test environment"
-        
         }
             }
                 stage("deploy to prod"){
@@ -65,7 +64,5 @@ pipeline{
         }
             }
         }
-    }
-}
     }
 }

@@ -10,6 +10,8 @@ pipeline{
                 expression { params.envName =="dev" }
             }
             steps{
+                when {
+                expression { params.envName =="dev" }
                 sh "mvn clean package"
             }
         }

@@ -40,10 +40,11 @@ pipeline{
                 echo params.envName
                     echo "deploy to production"
                  sshagent(['dev-tomcat']) {
-        // COPY WAR FILE TO TOMCAT
+    // some block
         sh "scp -o StrictHostKeyChecking=no target/mvn-project.war ec2-user@172.31.43.84:/opt/tomcat9/webapps"
         // SHUTDOWN TOMCAT
          sh "ssh ec2-user@172.31.43.84 /opt/tomcat9/bin/shutdown.sh"
+                     sh "ssh ec2-user@172.31.43.84 /opt/tomcat9/bin/startup.sh"
                  }
 
         }

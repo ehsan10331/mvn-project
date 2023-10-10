@@ -17,6 +17,7 @@ pipeline{
                     repository: 'mvn-project-release', 
                     version: '1.0'
             }
+        }
         stage("deploy to dev"){
             steps{
                 sshagent(['dev-tomcat']) {

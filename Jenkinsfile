@@ -15,7 +15,7 @@ pipeline{
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'mvn-project-release', 
-                    version: '1.1'
+                    version: '1.2'
             }
         }
         stage("deploy to dev"){

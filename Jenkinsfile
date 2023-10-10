@@ -22,11 +22,11 @@ pipeline{
             steps{
                 sshagent(['dev-tomcat']) {
         // COPY WAR FILE TO TOMCAT
-        sh "scp -o StrictHostKeyChecking=no target/mvn-project.war ec2-user@172.31.80.147:/opt/tomcat9/webapps"
+        sh "scp -o StrictHostKeyChecking=no target/mvn-project.war ec2-user@172.31.32.127:/opt/tomcat9/webapps"
         // SHUTDOWN TOMCAT
-         sh "ssh ec2-user@172.31.80.147 /opt/tomcat9/bin/shutdown.sh"
+         sh "ssh ec2-user@172.31.32.127 /opt/tomcat9/bin/shutdown.sh"
          //START TOMCAT
-         sh "ssh ec2-user@172.31.80.147 /opt/tomcat9/bin/startup.sh"
+         sh "ssh ec2-user@172.31.32.127 /opt/tomcat9/bin/startup.sh"
         
         }
             }

@@ -4,7 +4,7 @@
   <groupId>com.icici</groupId>
   <artifactId>mvn-project</artifactId>
   <packaging>war</packaging>
-  <version>1.3</version>
+  <version>1.4</version>
   <name>mvn-project Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>

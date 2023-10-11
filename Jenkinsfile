@@ -14,6 +14,7 @@ pipeline{
                 def repoName = "mvn-project-release"
                     if(version.endsWith("SNAPSHOT"){
                         repoName = "mvn-project-snapshot"
+                    }
                 nexusArtifactUploader artifacts: [[artifactId: 'mvn-project', classifier: '', file: 'target/mvn-project.war', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'com.icici', 

@@ -8,6 +8,10 @@ pipeline{
         }
         stage("nexus deploy"){
             steps{
+                script{
+                    def pom = readMavenPom file: 'pom.xml'
+                def version = 'pom.version'
+                def repoName = "mvn-project-release"
                 nexusArtifactUploader artifacts: [[artifactId: 'mvn-project', classifier: '', file: 'target/mvn-project.war', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'com.icici', 

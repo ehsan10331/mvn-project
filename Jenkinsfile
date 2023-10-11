@@ -11,7 +11,7 @@ pipeline{
                 nexusArtifactUploader artifacts: [[artifactId: 'mvn-project', classifier: '', file: 'target/mvn-project.war', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'com.icici', 
-                    nexusUrl: '3.91.99.88:8081', 
+                    nexusUrl: '34.238.157.116:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: 'mvn-project-release', 

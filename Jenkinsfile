@@ -21,8 +21,8 @@ pipeline{
                     nexusUrl: '3.91.99.88:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'repoName, 
-                    version: version'
+                    repository: 'repoName', 
+                    version: 'version'
             }
         }
         // stage("deploy to dev"){

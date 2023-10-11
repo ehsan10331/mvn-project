@@ -14,7 +14,7 @@ pipeline{
                     nexusUrl: '3.91.99.88:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'mvn-project-release', 
+                    repository: 'mvn-project-snapshot', 
                     version: '1.0-SNAPSHOT'
             }
         }

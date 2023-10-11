@@ -8,14 +8,22 @@ pipeline{
         }
         stage("nexus deploy"){
             steps{
+                script{
+                    def pom = readMavenPom file: 'pom.xml'
+                    def version = 'pom.version'
+                    def repoName = 'mvn-project-release'
+                    if("version.endsWith("SNAPSHOT")){
+                        repoName = "mvn-project-snapshot"
+                    }
                 nexusArtifactUploader artifacts: [[artifactId: 'mvn-project', classifier: '', file: 'target/mvn-project.war', type: 'war']], 
                     credentialsId: 'nexus3', 
                     groupId: 'com.icici', 
                     nexusUrl: '34.238.157.116:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
-                    repository: 'mvn-project-release', 
-                    version: '1.3'
+                    repository: 'repoName', 
+                    version: 'version'
+                }
             }
         }
         stage("deploy to test"){
